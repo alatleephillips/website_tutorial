@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.3">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Alexandra A Phillips">
+<meta name="dcterms.date" content="2022-07-07">
+
+<title>Making Personal Websites with HTML Templates</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="WebsiteTutorial_files/libs/clipboard/clipboard.min.js"></script>
+<script src="WebsiteTutorial_files/libs/quarto-html/quarto.js"></script>
+<script src="WebsiteTutorial_files/libs/quarto-html/popper.min.js"></script>
+<script src="WebsiteTutorial_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="WebsiteTutorial_files/libs/quarto-html/anchor.min.js"></script>
+<link href="WebsiteTutorial_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="WebsiteTutorial_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="WebsiteTutorial_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="WebsiteTutorial_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="WebsiteTutorial_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
+<div id="quarto-sidebar-toc-left" class="sidebar toc-left">
+  <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Steps</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">0️⃣ Introduction</a></li>
+  <li><a href="#domain-name" id="toc-domain-name" class="nav-link" data-scroll-target="#domain-name">1️⃣ Domain Name</a></li>
+  <li><a href="#github-connection" id="toc-github-connection" class="nav-link" data-scroll-target="#github-connection">2️⃣ Github Connection</a></li>
+  <li><a href="#pick-template" id="toc-pick-template" class="nav-link" data-scroll-target="#pick-template">3️⃣ Pick Template</a></li>
+  <li><a href="#build-structure" id="toc-build-structure" class="nav-link" data-scroll-target="#build-structure">4️⃣ Build Structure</a></li>
+  <li><a href="#fill-in-content" id="toc-fill-in-content" class="nav-link" data-scroll-target="#fill-in-content">5️⃣ Fill in Content</a></li>
+  <li><a href="#push-changes" id="toc-push-changes" class="nav-link" data-scroll-target="#push-changes">6️⃣ Push Changes</a></li>
+  <li><a href="#set-up-hosting" id="toc-set-up-hosting" class="nav-link" data-scroll-target="#set-up-hosting">7️⃣ Set up Hosting</a></li>
+  <li><a href="#launch-website" id="toc-launch-website" class="nav-link" data-scroll-target="#launch-website">8️⃣ Launch Website</a></li>
+  <li><a href="#advanced-topics" id="toc-advanced-topics" class="nav-link" data-scroll-target="#advanced-topics">9️⃣ Advanced Topics</a></li>
+  </ul>
+</nav>
+</div>
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Making Personal Websites with HTML Templates</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Alexandra A Phillips </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">July 7, 2022</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<section id="introduction" class="level3">
+<h3 class="anchored" data-anchor-id="introduction">0️⃣ Introduction</h3>
+<p><strong>Why make a personal website?</strong> A website is an important component of your personal, scientific brand. A good website is also a powerful tool, helping you:</p>
+<ul>
+<li><p>📨 | Share resources with the scientific community</p></li>
+<li><p>💻 | Attract students or collaborators for projects</p></li>
+<li><p>📊 | Promote your work to the general public</p></li>
+</ul>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Throughout your career, you will be internet searched for by students, colleagues, and coworkers- what do you want them to find when they look you up?</p>
+</div>
+</div>
+<p><strong>How do you get started?</strong> There are so many ways to build a website! You can use paid services like Squarespace or Wix (which are beautiful, fast, and mobile-friendly, but expensive) or free services like R Blogdown or Quarto (which are easy and familiar, but lack design customization and aesthetics). Here, I cover an intermediate option that borrows the best of these approaches: creating a beautiful, tweak-able professional website for a low cost. 🥳</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The total cost of a website using these steps is approximately $12-20 a year</p>
+</div>
+</div>
+<p><strong>Do I need to know how to code?</strong> The short answer is no! That’s the ✨ magic ✨ of templates. Most of it is filling things in. That being said, it does help to know some very basic commands for navigating <a href="https://www.math.uh.edu/~torok/math_6298/html/commands.html">HTML</a>, <a href="https://www.w3schools.com/cssref/">CSS</a>, and <a href="https://www.earthdatascience.org/courses/intro-to-earth-data-science/open-reproducible-science/bash/bash-commands-to-manage-directories-files/">Bash</a>. The more you tweak your template, the more coding you will have to do. If you aren’t interested in that adventure, try to find a template that needs minimal adjusting for your needs.</p>
+<p><strong>How long will it take?</strong> I’ve broken down the process into eight steps. My personal website took me about two weeks to make over many few hour sessions, but it was fairly complicated and had many components. The simpler your website is, the faster it will be to build! Also, the more you have a mental map of what you want your website to look like, the easier it will be to execute. Let’s get started! 👩‍💻</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Untitled4.png" class="img-fluid figure-img" width="523"></p>
+</figure>
+</div>
+</section>
+<section id="domain-name" class="level3">
+<h3 class="anchored" data-anchor-id="domain-name">1️⃣ Domain Name</h3>
+<p><strong>Why buy a domain?</strong> Domain names are an important investment in your scientific and personal brand. I recommend using <a href="https://domains.google/">Google domains</a>. This is the only place you <em>have</em> to spend money for this entire process. Domains are typically only $12-20 per year. A few tips:</p>
+<ul>
+<li><p>🖥️ | Include your full name as it is published on papers</p></li>
+<li><p>🔑 | Keep it as short it possible while being unique</p></li>
+<li><p>💬 | Aim for a .com, .net, .org, or .co ending</p></li>
+<li><p>💰 | Consider investing in other extensions to protect your brand</p></li>
+</ul>
+<div class="callout-caution callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Danger
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Do not let your domain name expire! There is an annoying economic market for buying lapsed domains and re-selling them to people at a higher price.</p>
+</div>
+</div>
+</section>
+<section id="github-connection" class="level3">
+<h3 class="anchored" data-anchor-id="github-connection">2️⃣ Github Connection</h3>
+<p><strong>Why Github?</strong> We will use github because it allows great version control, allows you to access and edit your site across computers, and it interfaces well with Netlify (which will be hosting the site). This process to connect your computer and Github is a bit onerous, but you luckily only have to do it once per computer. Below, I’ve compiled the steps for mac users, but windows and linux systems may have <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">different steps</a>. 🧐</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you have already set up a connection between Github and R Studio you still have to do these steps!</p>
+</div>
+</div>
+<p>🌟 <strong>Step by Step</strong> 🌟</p>
+<ol type="1">
+<li><p>In your search bar, type <code>terminal</code> to launch a new session. Here’s where those <a href="https://www.macworld.com/article/221277/command-line-navigating-files-folders-mac-terminal.html">bash basics</a> on folder navigation may help!</p></li>
+<li><p>Type <code>git --version</code>. If it’s installed you should see a version number. If not, go ahead and follow the prompts to install.</p></li>
+<li><p>Next, type <code>git config --global user.name "your github username here"</code> and then the same for email: <code>git config --global user.email "your github email here"</code></p></li>
+<li><p>You can check to see if those were all entered correctly with <code>git config --global --list</code></p></li>
+<li><p>Next, <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">generate an SSH key</a> with <code>ssh-keygen -t ed25519 -C "your github email address here"</code> and press enter once when it asks for location and twice when it asks for a pass phrase</p></li>
+<li><p>Then, add the key to your computer using <code>eval "$(ssh-agent -s)"</code></p></li>
+<li><p>Next, create a file using <code>touch ~/.ssh/config</code> and then open the empty file with <code>open ~/.ssh/config</code></p></li>
+<li><p>In the empty file, add in the following: <code>Host *</code> and then a paragraph break, <code>AddKeystoAgent yes</code>, another paragraph break, <code>IdentityFile ~/.ssh/id_ed25519</code></p></li>
+<li><p>Add this to your keychain with <code>ssh-add -K ~/.ssh/id_ed25519</code></p></li>
+<li><p>Now we need to add the <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">SSH key to Github</a>. First, copy the SSH public key to your clipboard with <code>pbcopy &lt; ~/.ssh/id_ed25519.pub</code></p></li>
+<li><p>On Github, go to your settings, then SSH and GPG keys, then click new SSH key</p></li>
+<li><p>Add a title like <code>Work Computer</code> and paste your copied key there</p></li>
+<li><p>Next, go back to Github and create a new repository called something <code>Personal Website</code> and copy the SSH key for that empty repository</p></li>
+<li><p>Back on your terminal navigate to your desktop by typing <code>cd Desktop</code></p></li>
+<li><p>Then enter <code>git clone "Personal Website repository SSH key pasted here"</code> which will copy your empty folder onto your Desktop computer</p></li>
+</ol>
+<p>🤩 <strong>Success!</strong> You now have an empty folder on your desktop that is ready for you to edit locally and fill with your website. Onward to the fun tasks!</p>
+</section>
+<section id="pick-template" class="level3">
+<h3 class="anchored" data-anchor-id="pick-template">3️⃣ Pick Template</h3>
+<p><strong>Why use a template?</strong> There are so many great HTML/CSS templates in the creative commons (free!) that are modern, adaptive for desktop/mobile, responsive, and customizable. My favorite set is available <a href="https://html5up.net/">here</a>. There are dozens of free templates and if you are still itching for more options, the same developer has more <a href="https://pixelarity.com/">here</a> for a one time fee of $19. Some tips for selecting a template:</p>
+<ul>
+<li><p>🎨 | Don’t stress about colors or fonts, focus on the bones and components</p></li>
+<li><p>🗺️ | Come with a mental map of what your site might include</p></li>
+<li><p>💻 | One pagers can always be made into multipage sites</p></li>
+</ul>
+<p><strong>Example Websites:</strong> Here are a few example websites to show you how you can customize these templates to suit your needs. Just remember that more customizing means more coding (likely in CSS), so try to find as close a match as you can. If you use this tutorial, please send me your site to add to the list!</p>
+<ul>
+<li><p>👩‍🔬 | My <a href="www.alexandraatleephillips.com">personal science website</a>, built from the <a href="https://html5up.net/story">story template</a></p></li>
+<li><p>🏢 | A <a href="www.mirios.net">science business website</a>, built from the <a href="https://html5up.net/hyperspace">hyperspace template</a></p></li>
+<li><p>🧬 | A <a href="www.womendoingscience.com">science nonprofit website</a>, built from the (paid) <a href="https://pixelarity.com/indivisible">indivisible template</a></p></li>
+</ul>
+</section>
+<section id="build-structure" class="level3">
+<h3 class="anchored" data-anchor-id="build-structure">4️⃣ Build Structure</h3>
+<p><strong>Let’s get building!</strong> I know it’s tempting to dive straight into writing specific sections, but first we need to build the scaffolding. Once the foundation is in place, you can start to fill things in. A few tips on layout design:</p>
+<ul>
+<li><p>⏱️ | Think carefully about landing page where people spend the most time</p></li>
+<li><p>⏬ | Scrolling is more effective than clicking</p></li>
+<li><p>🖼️ | Include space for media like images or videos</p></li>
+<li><p>✂️ | Keep it simple and minimize user choices</p></li>
+<li><p>📬 | Include a contact form and/or links to social media pages</p></li>
+</ul>
+<p>🔨 <strong>Step by Step</strong> 🔨</p>
+<ol type="1">
+<li><p>Download your chosen template and save it to your empty, cloned repository folder from Github that is on your desktop</p></li>
+<li><p>Next, we need to download a decent text editor. I like <a href="https://www.sublimetext.com/">Sublime</a>, which works on Mac, Windows, and Linux.</p></li>
+<li><p>Locate the <code>index.html</code> file in your template folder and double click it. This should open an internet browser where you can preview the web page locally.</p></li>
+<li><p>Next, right click on the same <code>index.html</code> file and open it in Sublime. You should see a decent chunk of code.</p>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>I like to keep an extra copy of the unedited index file and rename it <code>template.html</code> in case I ever need to go back to the original version. You can also just keep an extra copy of the entire template folder.</p>
+</div>
+</div></li>
+<li><p>Take a minute to get familiar with the template structure, matching different components from the html file to the web page preview.</p></li>
+<li><p>Next (if you haven’t already) sketch out the ideal layout of your site on a piece of paper, keeping in mind the elements and general layout of your chosen template.</p>
+<p><img src="images/Note%20Jul%2014,%202022.jpg" class="img-fluid" width="510"></p></li>
+<li><p>Going back to your index file, rename all headers from things like <code>section one</code> to more useful titles like <code>about me</code>, copy and paste needed blocks, add needed links between sections, and keep going until you have you have an empty structure for the layout you designed</p></li>
+<li><p>As you are going, you can always save your <code>index.html</code> file and refresh the local web page preview to see the shape of your site come together</p></li>
+</ol>
+<p><strong>What if I have a one page site I want to make into multiple pages?</strong> An easy fix is to make a copy of your main <code>index.html</code> file and rename it - so in my case I made three copies and called them: <code>research.html</code>, <code>outreach.html</code>, and <code>resources.html</code>. Next, open these as separate tabs in the text editor and scaffold them in the same way as above. It helped me to create sub-folders in my images for each of these pages - just be sure to note the paths called for in the html code if you do that. To link to your new pages, just look for <code>href ="#"</code> sections of code and add in <code>href="research.html"</code>. 🎉</p>
+</section>
+<section id="fill-in-content" class="level3">
+<h3 class="anchored" data-anchor-id="fill-in-content">5️⃣ Fill in Content</h3>
+<p><strong>Time to get writing!</strong> 📝 Now it’s the fun part: filling in your content. Now that you have all your sections ready to go with some weird Latin text filler, go ahead and start adding in all the details to your sections. Depending on how many sections you have to fill in, this could take a little while or a long while so be patient - you don’t need to finish this project all in one day.</p>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Sublime’s text editor doesn’t have spell check automatically enabled. To enable it go to the tools menu and then press spell check. You can also write your website content in a document and then copy and paste sections in to avoid typos.</p>
+</div>
+</div>
+<p><strong>What about photos?</strong> Glad you asked. Photos are a super important part of websites, triggering emotions, drawing attention, and providing context. Some tips below for media on your site:</p>
+<ul>
+<li><p>📲| Phone images are better than no images! Don’t let lack of fancy photos limit you.</p></li>
+<li><p>🏷️ | Consider renaming images to useful titles like <code>banner</code> or <code>headshot</code></p></li>
+<li><p>🧑‍💻 | Include photos of you! (even if you do computation work)</p></li>
+<li><p>🌐 | Need background images? Explore my <a href="https://alexphillipsphoto.pixieset.com/ocean/">ocean landscapes</a> or the <a href="https://wordpress.org/openverse/?referrer=creativecommons.org">creative commons</a></p></li>
+</ul>
+<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Be careful of image sizes! Big images lead to slow website. Limit small photos to ~250 kb at 2000 pixel width. Large images can be closer to 2500 pixels wide and ~500 kb. Take advantage of <a href="https://www.adobe.com/express/feature/image/resize">free online resizers</a> if needed.</p>
+</div>
+</div>
+</section>
+<section id="push-changes" class="level3">
+<h3 class="anchored" data-anchor-id="push-changes">6️⃣ Push Changes</h3>
+<p><strong>Ready to be done for the day?</strong> 😴 Let’s push all of our changes back to github using the terminal again:</p>
+<ol type="1">
+<li>Open terminal and navigate to your Desktop by typing <code>cd Desktop</code></li>
+<li>Find your website folder by typing <code>ls</code> to see all the files on your Desktop</li>
+<li>You should see something like <code>personalwebsite</code> - navigate there with <code>ls personalwebsite</code></li>
+<li>You can type <code>git status</code> to see if changes need to be pushed to Github</li>
+<li>Then to commit them all type <code>git add .</code> followed by <code>git commit -m "any message here"</code></li>
+<li>Finally push with <code>git push</code></li>
+</ol>
+<p>Voila! Everything is up to date. 🙌 I like to keep the folder on my desktop for easy editing access, but you can feel free to move it or even delete it (you can always pull it from Github later!).</p>
+</section>
+<section id="set-up-hosting" class="level3">
+<h3 class="anchored" data-anchor-id="set-up-hosting">7️⃣ Set up Hosting</h3>
+<p><strong>Where should I host my website?</strong> Right now your website only exists locally, as that <code>index.html</code> file - but we want to share it with the world! For hosting, I prefer to use <a href="https://www.netlify.com/">Netlify</a> because their base plan is ✨ free ✨and they integrate really well with Github.</p>
+<ol type="1">
+<li>Sign up for an account, using your Github log in.</li>
+</ol>
+</section>
+<section id="launch-website" class="level3">
+<h3 class="anchored" data-anchor-id="launch-website">8️⃣ Launch Website</h3>
+</section>
+<section id="advanced-topics" class="level3">
+<h3 class="anchored" data-anchor-id="advanced-topics">9️⃣ Advanced Topics</h3>
+<section id="favicons" class="level4">
+<h4 class="anchored" data-anchor-id="favicons">❤️ | <strong>Favicons</strong></h4>
+<p>You know the icons associated with a website that you see in a tab preview or page bookmark? Having a favicon is a nice touch to elevate your website to looking extra professional. They should be simple, like a miniature logo. If you have a personal logo, you can resize it to 512 x 512 pixels. If you don’t, feel free to browse for a free vector on the <a href="https://thenounproject.com/">noun project</a> and resize it or create a favicon using an <a href="https://favicon.io/emoji-favicons/">emoji</a>. Save your favicon to your images folder and add this line to the <code>head</code> of your <code>index.html</code> file: <code>&lt;link rel="icon" href="images/ap-icon.png"&gt;</code>, just be sure to replace <code>ap-icon.png</code> with whatever you have named yours as.</p>
+</section>
+<section id="forms" class="level4">
+<h4 class="anchored" data-anchor-id="forms">🧡 | <strong>Forms</strong></h4>
+<p>Your html file probably has a form field that you can fill out and modify - but to get it to work with Netlify to send you emails, we need to alter the code a little. Find code that looks like <code>&lt;div class="fields"&gt;</code>. Before this, add the following (this tells Netlify that the following text fields and buttons are a form they need to monitor.</p>
+<div class="cell">
+<details>
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="sc">&lt;</span>form method<span class="ot">=</span><span class="st">"post"</span> name<span class="ot">=</span><span class="st">"submitmessage"</span> netlify<span class="sc">-</span>honeypot<span class="ot">=</span><span class="st">"bot-field"</span> action<span class="ot">=</span><span class="st">"submission-confirmation.html#contact"</span> netlify<span class="sc">&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="er">&lt;</span>p style<span class="ot">=</span><span class="st">"display:none;"</span><span class="sc">&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>     <span class="er">&lt;</span>label<span class="sc">&gt;</span>nothing<span class="sc">&lt;</span>input name<span class="ot">=</span><span class="st">"bot-field"</span><span class="sc">&gt;</span><span class="er">&lt;/</span>label<span class="sc">&gt;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="er">&lt;/</span>p<span class="sc">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Now look further down for something like <code>&lt;ul class="actions special"&gt;</code> (with more code in between) <code>&lt;/ul&gt;</code> - add <code>&lt;/form&gt;</code> after that. Finally, head to Netlify and go to site settings, then forms. Scroll to outgoing notifications and click to set up email notifications. Should be all set!</p>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>It’s always a good idea to have a friend test out a new form for you to make sure it’s working!</p>
+</div>
+</div>
+</section>
+<section id="search-engine-optimization" class="level4">
+<h4 class="anchored" data-anchor-id="search-engine-optimization">💛 | <strong>Search Engine Optimization</strong></h4>
+</section>
+<section id="changing-css" class="level4">
+<h4 class="anchored" data-anchor-id="changing-css">💚 | <strong>Changing CSS</strong></h4>
+<p>Ready to make a change to the colors or font? Time to dive into the CSS code! Going into all of these details is beyond this tutorial, but hopefully</p>
+</section>
+<section id="clean-urls" class="level4">
+<h4 class="anchored" data-anchor-id="clean-urls">🧡 | <strong>Clean URLS</strong></h4>
+</section>
+<section id="section" class="level4">
+<h4 class="anchored" data-anchor-id="section"></h4>
+</section>
+<section id="step-six-launch-your-website" class="level4">
+<h4 class="anchored" data-anchor-id="step-six-launch-your-website">Step Six: Launch your website</h4>
+<ul>
+<li><p>Tips</p>
+<ul>
+<li><p>Make sure any forms you create are enabled to send email notifications to you when they get filled out</p></li>
+<li><p>Enable “pretty URLS” on netlify to avoid your webpages ending in .html - to do this go to your site - then site settings - build and deploy - scroll to processing - asset optimization - edit settings - enable - check box for pretty URLs</p></li>
+</ul></li>
+</ul>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+<script src="WebsiteTutorial_files/libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

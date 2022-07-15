@@ -10,6 +10,7 @@ format: html
 html:
   code-tools: true
   code-overflow: wrap
+  link-external-newwindow: true
 highlight-style: atom-one
 execute:
   eval: false
@@ -97,7 +98,7 @@ If you have already set up a connection between Github and R Studio you still ha
 
 13. Next, go back to Github and create a new repository called something `Personal Website` and copy the SSH key for that empty repository
 
-14. Back on your terminal navigate to your desktop by typing `cd Desktop`
+14. Back on your terminal navigate to your desktop by typing `cd ~/Desktop`
 
 15. Then enter `git clone "Personal Website repository SSH key pasted here"` which will copy your empty folder onto your Desktop computer
 
@@ -115,11 +116,11 @@ If you have already set up a connection between Github and R Studio you still ha
 
 **Example Websites:** Here are a few example websites to show you how you can customize these templates to suit your needs. Just remember that more customizing means more coding (likely in CSS), so try to find as close a match as you can. If you use this tutorial, please send me your site to add to the list!
 
--   👩‍🔬 \| My [personal science website](www.alexandraatleephillips.com), built from the [story template](https://html5up.net/story)
+-   👩‍🔬 \| My [personal science website](https://www.alexandraatleephillips.com/), built from the [story template](https://html5up.net/story)
 
--   🏢 \| A [science business website](www.mirios.net), built from the [hyperspace template](https://html5up.net/hyperspace)
+-   🏢 \| A [science business website](https://mirios.net/), built from the [hyperspace template](https://html5up.net/hyperspace)
 
--   🧬 \| A [science nonprofit website](www.womendoingscience.com), built from the (paid) [indivisible template](https://pixelarity.com/indivisible)
+-   🧬 \| A [science nonprofit website](https://www.womendoingscience.com/), built from the (paid) [indivisible template](https://pixelarity.com/indivisible)
 
 ### 4️⃣ Build Structure
 
@@ -187,7 +188,7 @@ Be careful of image sizes! Big images lead to slow website. Limit small photos t
 
 **Ready to be done for the day?** 😴 Let's push all of our changes back to github using the terminal again:
 
-1.  Open terminal and navigate to your Desktop by typing `cd Desktop`
+1.  Open terminal and navigate to your Desktop by typing `cd ~/Desktop`
 2.  Find your website folder by typing `ls` to see all the files on your Desktop
 3.  You should see something like `personalwebsite` - navigate there with `ls personalwebsite`
 4.  Within this folder there should be something that ends in `.git` - you can check with `ls -la`, which lists all the files and extensions in the current directory
@@ -223,13 +224,7 @@ You know the icons associated with a website that you see in a tab preview or pa
 
 Your html file probably has a form field that you can fill out and modify - but to get it to work with Netlify to send you emails, we need to alter the code a little. Find code that looks like `<div class="fields">`. Before this, add the following (this tells Netlify that the following text fields and buttons are a form they need to monitor.
 
-```{r}
-#| code-fold: true
-#| code-summary: "Show the code"
-<form method="post" name="submitmessage" netlify-honeypot="bot-field" action="submission-confirmation.html#contact" netlify>
-  <p style="display:none;">
-     <label>nothing<input name="bot-field"></label>
-  </p>
+```{}
 ```
 
 Now look further down for something like `<ul class="actions special">` (with more code in between) `</ul>` - add `</form>` after that. Finally, head to Netlify and go to site settings, then forms. Scroll to outgoing notifications and click to set up email notifications. Should be all set - although it's always good to have a friend test it for you to be sure.
@@ -258,4 +253,4 @@ If you have any other questions, feedback on this guide, or just want to share y
 
 💌 \| phillips.alexandra.a\@gmail.com
 
-🐦 \| @[alexploring](www.twitter.com/alexploring)
+🐦 \| @[alexploring](www.twitter.com/https://twitter.com/alexploringalexploring)

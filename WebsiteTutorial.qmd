@@ -190,19 +190,28 @@ Be careful of image sizes! Big images lead to slow website. Limit small photos t
 1.  Open terminal and navigate to your Desktop by typing `cd Desktop`
 2.  Find your website folder by typing `ls` to see all the files on your Desktop
 3.  You should see something like `personalwebsite` - navigate there with `ls personalwebsite`
-4.  You can type `git status` to see if changes need to be pushed to Github
-5.  Then to commit them all type `git add .` followed by `git commit -m "any message here"`
-6.  Finally push with `git push`
+4.  Within this folder there should be something that ends in `.git` - you can check with `ls -la`, which lists all the files and extensions in the current directory
+5.  Once you are in the correct folder, you can type `git status` to see if changes need to be pushed to Github
+6.  Then to commit them all type `git add .` followed by `git commit -m "any message here"`
+7.  Finally push with `git push`
 
 Voila! Everything is up to date. 🙌 I like to keep the folder on my desktop for easy editing access, but you can feel free to move it or even delete it (you can always pull it from Github later!).
 
 ### 7️⃣ Set up Hosting
 
-**Where should I host my website?** Right now your website only exists locally, as that `index.html` file - but we want to share it with the world! For hosting, I prefer to use [Netlify](https://www.netlify.com/) because their base plan is ✨ free ✨and they integrate really well with Github.
+**Where should I host my website?** Right now your website only exists locally, as that `index.html` file - but we want to share it with the world! For hosting, I prefer to use [Netlify](https://www.netlify.com/) because their base plan is ✨ free ✨and they integrate really well with Github. Go ahead and sign up for an account, using your Github log in.
 
-1.  Sign up for an account, using your Github log in.
+::: callout-note
+If your website uses a lot of media like high resolution photos or videos, you may need to bump up your Netlify plan or shop around for other hosting platforms. The next tier on Netlify is \$228 a year, which is a big jump - and around the same price as Squarespace or Wix.
+:::
 
 ### 8️⃣ Launch Website
+
+**Ready to share with the world?** 🌎 Let's launch your website! First, on Netlify, create a new site by important your existing project via Github. Select your website's repository and press `deploy site`! Next up, we need to connect your domain: head back to [Google domains](https://domains.google/) and find DNS settings and then manage custom records. Follow the `check DNS configurations` that pop up on Netlify. You may need to do this for one or two subdomains, like the `www.domain.com` and the `domain.com`. This can take a day or two to finalize.
+
+::: callout-tip
+You can manage a lot of things under the DNS (domain name system) settings! You can use this to create redirects, like if you want `www.domain.com/github` to forward to your Github profile, you can set that up here. You can also create subdomains, like if you wanted to launch a photography site you could create `www.photo.domain.com` for that new website.
+:::
 
 ### 9️⃣ Advanced Topics
 
@@ -223,26 +232,30 @@ Your html file probably has a form field that you can fill out and modify - but 
   </p>
 ```
 
-Now look further down for something like `<ul class="actions special">` (with more code in between) `</ul>` - add `</form>` after that. Finally, head to Netlify and go to site settings, then forms. Scroll to outgoing notifications and click to set up email notifications. Should be all set!
-
-::: callout-tip
-It's always a good idea to have a friend test out a new form for you to make sure it's working!
-:::
+Now look further down for something like `<ul class="actions special">` (with more code in between) `</ul>` - add `</form>` after that. Finally, head to Netlify and go to site settings, then forms. Scroll to outgoing notifications and click to set up email notifications. Should be all set - although it's always good to have a friend test it for you to be sure.
 
 #### 💛 \| **Search Engine Optimization**
 
+Search Engine Optimization (SEO) improves your website's ranking in search results, which is important for increasing traffic. The basics of SEO include having meta titles and descriptions throughout your page that let search engines know what is on your site. Adding meta descriptions to your `index.html` file is pretty simple: somewhere between the section of code that starts with `<head>` and ends with `</head>` you can add: `<meta name="description" content="insert your description here." />`. Some tips:
+
+-   📝 \| Keep it short, between 100-160 characters (or it will get truncated)
+
+-   🔑 \| Insert keywords that people may use while searching for you (ex: scientist)
+
+-   💻 \| Check your progress by searching for yourself on an incognito browser
+
 #### 💚 \| **Changing CSS**
 
-Ready to make a change to the colors or font? Time to dive into the CSS code! Going into all of these details is beyond this tutorial, but hopefully
+Ready to make a more advanced change to the colors or font? Time to dive into the CSS (Cascading Style Sheets) code! HTML is a markup language connected to CSS, which is what specifies how documents are styled and laid out. Going into all of these details of tweaking CSS code is beyond this tutorial, but the more specific the task is, I think the easier it is to find out how to change it. The CSS code lives in the `assets` folder and you can edit it with the same text editor. You can also look through a [tutorial](https://learn.shayhowe.com/html-css/getting-to-know-css/) or [book](https://www.w3schools.com/css/css_font.asp) on CSS to learn more.
 
-#### 🧡 \| **Clean URLS**
+#### 💙 \| **Clean URLS**
 
-#### 
+If you forced a one pager website to become multiple pages, you will probably end up with annoying endings like `domain.com/research.html`. To clean that up to be just `domain.com/research`, you can go to Netlify and find your site settings, then build and deploy. Scroll to processing, then asset optimization, and then edit settings. Click enable and make sure the check box is clicked for `pretty URLs`. Done!
 
-#### Step Six: Launch your website
+#### 💜 \| **Anything else?** 
 
--   Tips
+If you have any other questions, feedback on this guide, or just want to share your site with me, feel free to get in touch!
 
-    -   Make sure any forms you create are enabled to send email notifications to you when they get filled out
+💌 \| phillips.alexandra.a\@gmail.com
 
-    -   Enable "pretty URLS" on netlify to avoid your webpages ending in .html - to do this go to your site - then site settings - build and deploy - scroll to processing - asset optimization - edit settings - enable - check box for pretty URLs
+🐦 \| @[alexploring](www.twitter.com/alexploring)
